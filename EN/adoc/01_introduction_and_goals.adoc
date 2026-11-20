@@ -55,9 +55,11 @@ The top three (max five) quality goals for the architecture whose fulfillment is
 We really mean quality goals for the architecture. Don't confuse them with project goals.
 They are not necessarily identical.
 
-Consider this overview of potential topics (based upon the ISO 25010 standard):
+Consider this overview of potential topics (based upon the https://www.iso.org/obp/ui/#iso:std:iso-iec:25010:ed-2:v1:en[ISO 25010:2023] standard):
 
 image::01_2_iso-25010-topics-EN-2023.drawio.png["Categories of Quality Requirements"]
+
+For a more extensive (and open) collection of qualities, definitions and example requirements, see the https://quality.arc42.org[Q42 quality model].
 
 .Motivation
 You should know the quality goals of your most important stakeholders, since they will influence fundamental architectural decisions. 
@@ -89,7 +91,27 @@ Otherwise, you may get nasty surprises later in the development process.
 These stakeholders determine the extent and the level of detail of your work and its results.
 
 .Form
-Table with role names, person names, and their expectations with respect to the architecture and its documentation.
+Table with role names, person names, and their expectations with respect to the architecture documentation (!).
+Do not repeat stakeholders' functional and quality requirements.
+Identify their documentation needs here.
+
+.Example
+The following stakeholder roles recur across many projects. Use it as a
+starting point, then adapt the roles, names and expectations to your actual project.
+Not every project has all of these roles, and some will have additional ones.
+
+[options="header",cols="1,2,2"]
+|===
+|Role/Name|Contact|Expectations
+|Product Owner|Product Management|Prioritizes features by business value; needs Section 1 (Requirements Overview, Quality Goals) kept aligned with product strategy
+|End Users / Customers|represented via UX research, support tickets|Need the system to be usable, reliable and fast; drive quality goals such as performance and usability
+|Software Architect(s)|Architecture Team|Own and maintain this documentation; use it to justify and communicate technical decisions
+|Development Team|Engineering Team|Need clear building blocks (Section 5) and runtime scenarios (Section 6) to implement correctly
+|Operations / SRE|Ops Team|Need the deployment view (Section 7) and cross-cutting concepts (Section 8, e.g. monitoring, logging) to run the system reliably
+|Security Officer / InfoSec|Security Team|Review the architecture against risks (Section 11) and quality requirements (Section 10); need evidence that security constraints are addressed
+|Compliance / Legal|Legal/Compliance Team|Need evidence that regulatory constraints (Section 2) are respected, e.g. data protection, licensing
+|Project Sponsor / Management|Steering Committee|Need confidence that architecture decisions (Section 9) support budget, timeline and strategic goals
+|===
 ****
 endif::arc42help[]
 
